@@ -7,190 +7,97 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --navy:     #1e3a5f;
-      --navy-mid: #2c5282;
-      --sky:      #ccd9e8;
-      --bg:       #f0f4f8;
-      --surface:  #ffffff;
-      --text:     #1a2c3d;
-      --muted:    #5a7080;
-      --accent:   #e8622a;
-      --cool:     #2563a8;
-      --warm:     #c0390b;
-      --border:   #d1dce8;
-      --radius:   10px;
-      --green:    #1a7a4a;
+      --navy:#1e3a5f; --navy-mid:#2c5282; --sky:#ccd9e8; --bg:#f0f4f8;
+      --surface:#ffffff; --text:#1a2c3d; --muted:#5a7080; --accent:#e8622a;
+      --cool:#2563a8; --warm:#c0390b; --border:#d1dce8; --radius:10px; --green:#1a7a4a;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 
-    /* Header */
-    header {
-      background: var(--navy); padding: 0 2.5rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 68px; box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-      position: sticky; top: 0; z-index: 100;
-    }
-    .header-brand { display: flex; align-items: center; gap: 0.75rem; }
-    .header-logo { width: 36px; height: 36px; background: var(--accent); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center; }
-    .header-logo svg { width: 20px; height: 20px; fill: white; }
-    .header-title { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: white; }
-    .header-nav a { color: var(--sky); text-decoration: none; font-size: 0.85rem;
-      font-weight: 500; transition: color 0.15s; }
-    .header-nav a:hover { color: white; }
+    header{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:68px;box-shadow:0 2px 12px rgba(0,0,0,0.18);position:sticky;top:0;z-index:100;}
+    .header-brand{display:flex;align-items:center;gap:0.75rem;}
+    .header-logo{width:36px;height:36px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+    .header-logo svg{width:20px;height:20px;fill:white;}
+    .header-title{font-family:'DM Serif Display',serif;font-size:1.15rem;color:white;}
+    .header-nav a{color:var(--sky);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.15s;}
+    .header-nav a:hover{color:white;}
 
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      padding: 3rem 2.5rem 2.5rem; text-align: center; position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 75% 40%, rgba(232,98,42,0.1) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
-    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.6rem,3vw,2.4rem);
-      color: white; margin-bottom: 0.75rem; }
-    .hero-sub { font-size: 0.95rem; color: var(--sky); font-weight: 300;
-      max-width: 520px; margin: 0 auto; line-height: 1.7; }
+    .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:3rem 2.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 40%,rgba(232,98,42,0.1) 0%,transparent 60%);pointer-events:none;}
+    .hero-eyebrow{font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;}
+    .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:white;margin-bottom:0.75rem;}
+    .hero-sub{font-size:0.95rem;color:var(--sky);font-weight:300;max-width:520px;margin:0 auto;line-height:1.7;}
 
-    /* Main */
-    main { max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    main{max-width:1000px;margin:0 auto;padding:2.5rem 1.5rem 4rem;}
 
-    /* Search panel */
-    .search-panel {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 2rem 2rem 1.75rem;
-      box-shadow: 0 4px 20px rgba(30,58,95,0.08); margin-bottom: 2rem;
-    }
-    .search-panel h2 {
-      font-family: 'DM Serif Display', serif; font-size: 1.2rem;
-      color: var(--navy); margin-bottom: 1.5rem;
-      padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
-    }
-    .controls {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-    }
-    .control-group { display: flex; flex-direction: column; gap: 0.35rem; }
-    label { font-size: 0.78rem; font-weight: 600; color: var(--navy);
-      text-transform: uppercase; letter-spacing: 0.06em; }
-    select, input[type="number"] {
-      padding: 0.6rem 0.85rem; border: 1px solid var(--border);
-      border-radius: 7px; font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem; color: var(--text); background: var(--bg);
-      appearance: none; -webkit-appearance: none;
-      transition: border-color 0.15s, box-shadow 0.15s;
-    }
-    select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235a7080' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 0.75rem center;
-      padding-right: 2rem; cursor: pointer; }
-    select:focus, input[type="number"]:focus {
-      outline: none; border-color: var(--navy-mid);
-      box-shadow: 0 0 0 3px rgba(44,82,130,0.12);
-    }
-    .btn-search {
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-      background: var(--navy); color: white; border: none; cursor: pointer;
-      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600;
-      padding: 0.65rem 1.75rem; border-radius: 7px;
-      transition: background 0.15s; align-self: flex-end; width: 100%;
-    }
-    .btn-search:hover { background: var(--navy-mid); }
-    .btn-search svg { width: 16px; height: 16px; fill: white; }
+    .search-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem 2rem 1.75rem;box-shadow:0 4px 20px rgba(30,58,95,0.08);margin-bottom:2rem;}
+    .search-panel h2{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border);}
+    .controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:1.25rem;}
+    .control-group{display:flex;flex-direction:column;gap:0.35rem;}
+    label{font-size:0.78rem;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:0.06em;}
+    select,input[type="number"]{padding:0.6rem 0.85rem;border:1px solid var(--border);border-radius:7px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--text);background:var(--bg);appearance:none;-webkit-appearance:none;transition:border-color 0.15s,box-shadow 0.15s;}
+    select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235a7080' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0.75rem center;padding-right:2rem;cursor:pointer;}
+    select:focus,input[type="number"]:focus{outline:none;border-color:var(--navy-mid);box-shadow:0 0 0 3px rgba(44,82,130,0.12);}
+    .btn-search{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--navy);color:white;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;padding:0.65rem 1.75rem;border-radius:7px;transition:background 0.15s;align-self:flex-end;width:100%;}
+    .btn-search:hover{background:var(--navy-mid);}
+    .btn-search svg{width:16px;height:16px;fill:white;}
 
-    /* Loading */
-    .loading { text-align: center; padding: 3rem; color: var(--muted); font-size: 0.9rem; }
-    .spinner { width: 32px; height: 32px; border: 3px solid var(--border);
-      border-top-color: var(--navy); border-radius: 50%; animation: spin 0.8s linear infinite;
-      margin: 0 auto 1rem; }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    /* Station note */
+    .station-note{margin-top:1.25rem;padding:0.85rem 1rem;background:#f0f6ff;border:1px solid #c5d8f0;border-radius:7px;font-size:0.8rem;color:var(--navy);line-height:1.6;}
+    .station-note strong{font-weight:600;}
+    .station-badge-old{display:inline-block;padding:0.1rem 0.5rem;border-radius:999px;font-size:0.68rem;font-weight:600;background:#fff3cd;color:#7a5000;border:1px solid #e8c840;margin-left:4px;vertical-align:middle;}
+    .station-badge-current{display:inline-block;padding:0.1rem 0.5rem;border-radius:999px;font-size:0.68rem;font-weight:600;background:#e8f5e9;color:#2a6e3f;border:1px solid #a8d5b5;margin-left:4px;vertical-align:middle;}
 
-    /* Results */
-    .results-header {
-      display: flex; align-items: baseline; justify-content: space-between;
-      margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;
-    }
-    .results-title { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--navy); }
-    .results-count { font-size: 0.82rem; color: var(--muted); }
+    .loading{text-align:center;padding:3rem;color:var(--muted);font-size:0.9rem;}
+    .spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--navy);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 1rem;}
+    @keyframes spin{to{transform:rotate(360deg);}}
 
-    /* Summary stats bar */
-    .stats-bar {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.75rem; margin-bottom: 1.5rem;
-    }
-    .stat-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 8px; padding: 0.9rem 1.1rem;
-    }
-    .stat-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.07em; color: var(--muted); margin-bottom: 0.3rem; }
-    .stat-value { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--navy); }
-    .stat-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; }
+    .results-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem;}
+    .results-title{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--navy);}
+    .results-count{font-size:0.82rem;color:var(--muted);}
 
-    /* Table */
-    .results-table-wrap {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
-    thead { background: var(--navy); }
-    thead th {
-      color: white; font-weight: 600; font-size: 0.78rem;
-      text-transform: uppercase; letter-spacing: 0.06em;
-      padding: 0.85rem 1rem; text-align: left; cursor: pointer;
-      user-select: none; white-space: nowrap;
-    }
-    thead th:hover { background: var(--navy-mid); }
-    thead th .sort-icon { margin-left: 0.3rem; opacity: 0.5; font-size: 0.7rem; }
-    thead th.active .sort-icon { opacity: 1; }
-    tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
-    tbody tr:last-child { border-bottom: none; }
-    tbody tr:hover { background: #f7fafd; }
-    tbody td { padding: 0.75rem 1rem; }
-    .td-date { font-weight: 600; color: var(--navy); white-space: nowrap; }
-    .td-temp {
-      font-family: 'DM Serif Display', serif; font-size: 1.05rem;
-      font-weight: 600;
-    }
-    .td-temp.warm { color: var(--warm); }
-    .td-temp.cool { color: var(--cool); }
-    .td-ago { color: var(--muted); font-size: 0.8rem; }
-    .td-season { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px;
-      font-size: 0.72rem; font-weight: 600; }
-    .season-summer { background: #fde8d8; color: #c0390b; }
-    .season-autumn  { background: #fef3e2; color: #b35a00; }
-    .season-winter { background: #dceeff; color: #1a4fa0; }
-    .season-spring { background: #dff5e8; color: #1a7a4a; }
+    .stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.75rem;margin-bottom:1.5rem;}
+    .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1.1rem;}
+    .stat-label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:0.3rem;}
+    .stat-value{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--navy);}
+    .stat-sub{font-size:0.75rem;color:var(--muted);margin-top:0.1rem;}
 
-    /* Pagination */
-    .pagination { display: flex; align-items: center; justify-content: center;
-      gap: 0.5rem; margin-top: 1.25rem; }
-    .page-btn { background: var(--surface); border: 1px solid var(--border);
-      border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.82rem;
-      cursor: pointer; color: var(--navy); font-family: 'DM Sans', sans-serif;
-      transition: all 0.15s; }
-    .page-btn:hover { background: var(--sky); }
-    .page-btn.active { background: var(--navy); color: white; border-color: var(--navy); }
-    .page-info { font-size: 0.8rem; color: var(--muted); }
+    .results-table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+    table{width:100%;border-collapse:collapse;font-size:0.88rem;}
+    thead{background:var(--navy);}
+    thead th{color:white;font-weight:600;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;padding:0.85rem 1rem;text-align:left;cursor:pointer;user-select:none;white-space:nowrap;}
+    thead th:hover{background:var(--navy-mid);}
+    tbody tr{border-bottom:1px solid var(--border);transition:background 0.1s;}
+    tbody tr:last-child{border-bottom:none;}
+    tbody tr:hover{background:#f7fafd;}
+    tbody tr.row-old-station{background:#fffdf0;}
+    tbody tr.row-old-station:hover{background:#fff9d6;}
+    tbody td{padding:0.75rem 1rem;}
+    .td-date{font-weight:600;color:var(--navy);white-space:nowrap;}
+    .td-temp{font-family:'DM Serif Display',serif;font-size:1.05rem;font-weight:600;}
+    .td-temp.warm{color:var(--warm);}
+    .td-temp.cool{color:var(--cool);}
+    .td-ago{color:var(--muted);font-size:0.8rem;}
+    .td-season{display:inline-block;padding:0.15rem 0.6rem;border-radius:999px;font-size:0.72rem;font-weight:600;}
+    .season-summer{background:#fde8d8;color:#c0390b;}
+    .season-autumn{background:#fef3e2;color:#b35a00;}
+    .season-winter{background:#dceeff;color:#1a4fa0;}
+    .season-spring{background:#dff5e8;color:#1a7a4a;}
 
-    /* Empty state */
-    .empty { text-align: center; padding: 3.5rem 1rem; color: var(--muted); }
-    .empty-icon { font-size: 3rem; margin-bottom: 0.75rem; }
-    .empty h3 { font-family: 'DM Serif Display', serif; color: var(--navy);
-      font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .empty p { font-size: 0.85rem; line-height: 1.6; }
+    .pagination{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;}
+    .page-btn{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.75rem;font-size:0.82rem;cursor:pointer;color:var(--navy);font-family:'DM Sans',sans-serif;transition:all 0.15s;}
+    .page-btn:hover{background:var(--sky);}
+    .page-btn.active{background:var(--navy);color:white;border-color:var(--navy);}
+    .page-info{font-size:0.8rem;color:var(--muted);}
 
-    footer { background: var(--navy); color: var(--sky); text-align: center;
-      padding: 1.5rem; font-size: 0.78rem; font-weight: 300; }
-    footer strong { color: white; }
-    footer a { color: var(--sky); }
+    .empty{text-align:center;padding:3.5rem 1rem;color:var(--muted);}
+    .empty-icon{font-size:3rem;margin-bottom:0.75rem;}
+    .empty h3{font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.2rem;margin-bottom:0.5rem;}
+    .empty p{font-size:0.85rem;line-height:1.6;}
+
+    footer{background:var(--navy);color:var(--sky);text-align:center;padding:1.5rem;font-size:0.78rem;font-weight:300;}
+    footer strong{color:white;}
+    footer a{color:var(--sky);}
   </style>
 </head>
 <body>
@@ -214,21 +121,18 @@
 </section>
 
 <main>
-
   <div class="search-panel">
     <h2>Search Parameters</h2>
     <div class="controls">
-
       <div class="control-group">
         <label>Location</label>
-        <select id="sel-location">
+        <select id="sel-location" onchange="updateStationNote()">
           <option value="Adelaide">Adelaide</option>
           <option value="Archerfield">Archerfield</option>
           <option value="Bankstown" selected>Bankstown</option>
           <option value="Melbourne">Melbourne</option>
         </select>
       </div>
-
       <div class="control-group">
         <label>Temperature type</label>
         <select id="sel-type">
@@ -236,7 +140,6 @@
           <option value="min">Minimum (Overnight Low)</option>
         </select>
       </div>
-
       <div class="control-group">
         <label>Condition</label>
         <select id="sel-condition">
@@ -245,31 +148,22 @@
           <option value="eq">≈  Closest to</option>
         </select>
       </div>
-
       <div class="control-group">
         <label>Temperature (°C)</label>
         <input type="number" id="inp-threshold" value="40" step="0.5"/>
       </div>
-
       <div class="control-group">
         <label>Month filter</label>
         <select id="sel-month">
           <option value="0">All months</option>
-          <option value="1">January</option>
-          <option value="2">February</option>
-          <option value="3">March</option>
-          <option value="4">April</option>
-          <option value="5">May</option>
-          <option value="6">June</option>
-          <option value="7">July</option>
-          <option value="8">August</option>
-          <option value="9">September</option>
-          <option value="10">October</option>
-          <option value="11">November</option>
-          <option value="12">December</option>
+          <option value="1">January</option><option value="2">February</option>
+          <option value="3">March</option><option value="4">April</option>
+          <option value="5">May</option><option value="6">June</option>
+          <option value="7">July</option><option value="8">August</option>
+          <option value="9">September</option><option value="10">October</option>
+          <option value="11">November</option><option value="12">December</option>
         </select>
       </div>
-
       <div class="control-group">
         <label>Sort by</label>
         <select id="sel-sort">
@@ -279,40 +173,70 @@
           <option value="temp-asc">Coolest first</option>
         </select>
       </div>
-
     </div>
     <button class="btn-search" onclick="runSearch()">
       <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
       Search Records
     </button>
+
+    <!-- Station note — shown for Adelaide and Melbourne -->
+    <div class="station-note" id="station-note" style="display:none;"></div>
   </div>
 
   <div id="results-area"></div>
-
 </main>
 
 <footer>
-  <strong>MetService Australia</strong> &nbsp;·&nbsp; Historical Temperature Search
+  <strong>MetraWeather Australia</strong> &nbsp;·&nbsp; Historical Temperature Search
   &nbsp;·&nbsp; Data: <a href="https://www.bom.gov.au">Bureau of Meteorology</a>
   &nbsp;·&nbsp; <a href="index.html">← Anomaly Tables</a>
 </footer>
 
 <script>
   const MONTH_NAMES = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  const MONTH_FULL  = ["","January","February","March","April","May","June",
-                        "July","August","September","October","November","December"];
-  const SEASONS = {
-    1:"summer",2:"summer",3:"autumn",4:"autumn",5:"autumn",
-    6:"winter",7:"winter",8:"winter",9:"spring",10:"spring",11:"spring",12:"summer"
-  };
-  const SEASON_LABEL = { summer:"Summer", autumn:"Autumn", winter:"Winter", spring:"Spring" };
+  const MONTH_FULL  = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
+  const SEASONS = {1:"summer",2:"summer",3:"autumn",4:"autumn",5:"autumn",6:"winter",7:"winter",8:"winter",9:"spring",10:"spring",11:"spring",12:"summer"};
+  const SEASON_LABEL = {summer:"Summer",autumn:"Autumn",winter:"Winter",spring:"Spring"};
 
-  let obsData   = null;
+  // Station change info per location
+  const STATION_INFO = {
+    Adelaide: {
+      old:     "Kent Town (023090)",
+      current: "West Terrace (023000)",
+      cutYear: 2017,
+      note:    "Adelaide observations before 2017 are from <strong>Kent Town station</strong>. From 2017 onwards the primary station is <strong>West Terrace</strong>. Small temperature differences may exist between the two sites.",
+    },
+    Melbourne: {
+      old:     "Regional Office (086071)",
+      current: "Olympic Park (086338)",
+      cutYear: 2013,
+      note:    "Melbourne observations before 2013 are from <strong>Regional Office (CBD)</strong>. From 2013 onwards the primary station is <strong>Olympic Park</strong>. Small temperature differences may exist between the two sites.",
+    },
+  };
+
+  let obsData    = null;
   let allResults = [];
   let currentPage = 1;
   const PAGE_SIZE = 25;
 
-  // ── Load data ────────────────────────────────────────────────────────────
+  // ── Station note ─────────────────────────────────────────────────────────
+  function updateStationNote() {
+    const loc = document.getElementById("sel-location").value;
+    const el  = document.getElementById("station-note");
+    if (STATION_INFO[loc]) {
+      const info = STATION_INFO[loc];
+      el.innerHTML = `ℹ️ &nbsp;${info.note}<br>
+        <span style="margin-top:6px;display:inline-block;">
+          Records before ${info.cutYear}: <span class="station-badge-old">${info.old}</span>
+          &nbsp;&nbsp;Records from ${info.cutYear}+: <span class="station-badge-current">${info.current}</span>
+        </span>`;
+      el.style.display = "block";
+    } else {
+      el.style.display = "none";
+    }
+  }
+
+  // ── Load data ─────────────────────────────────────────────────────────────
   async function loadData() {
     if (obsData) return true;
     showLoading("Loading observation data…");
@@ -323,11 +247,9 @@
       return true;
     } catch(e) {
       document.getElementById("results-area").innerHTML = `
-        <div class="empty">
-          <div class="empty-icon">⚠️</div>
+        <div class="empty"><div class="empty-icon">⚠️</div>
           <h3>Could not load observation data</h3>
-          <p>Make sure <strong>observations.json</strong> has been committed to the repository.<br>
-          Run <code>export_observations_json.py</code> then add the file to GitHub.</p>
+          <p>Make sure <strong>observations.json</strong> has been committed to the repository.</p>
         </div>`;
       return false;
     }
@@ -342,24 +264,22 @@
   async function runSearch() {
     if (!await loadData()) return;
 
-    const location  = document.getElementById("sel-location").value;
-    const type      = document.getElementById("sel-type").value;
-    const condition = document.getElementById("sel-condition").value;
-    const threshold = parseFloat(document.getElementById("inp-threshold").value);
+    const location    = document.getElementById("sel-location").value;
+    const type        = document.getElementById("sel-type").value;
+    const condition   = document.getElementById("sel-condition").value;
+    const threshold   = parseFloat(document.getElementById("inp-threshold").value);
     const monthFilter = parseInt(document.getElementById("sel-month").value);
-    const sortBy    = document.getElementById("sel-sort").value;
+    const sortBy      = document.getElementById("sel-sort").value;
 
-    if (isNaN(threshold)) {
-      alert("Please enter a valid temperature."); return;
-    }
+    if (isNaN(threshold)) { alert("Please enter a valid temperature."); return; }
 
     const records = obsData[location]?.[type];
     if (!records) { alert("No data for this selection."); return; }
 
     showLoading(`Searching ${records.length.toLocaleString()} records…`);
-    await new Promise(r => setTimeout(r, 10)); // let spinner render
+    await new Promise(r => setTimeout(r, 10));
 
-    // Filter
+    // Records are [year, month, day, temp] or [year, month, day, temp, old_flag]
     let filtered = records.filter(([y, m, d, t]) => {
       if (monthFilter !== 0 && m !== monthFilter) return false;
       if (condition === "gte") return t >= threshold;
@@ -368,12 +288,10 @@
       return false;
     });
 
-    // For "closest to" — rank by closeness
     if (condition === "eq") {
       filtered.sort((a,b) => Math.abs(a[3]-threshold) - Math.abs(b[3]-threshold));
     }
 
-    // Sort
     if (sortBy === "date-desc") filtered.sort((a,b) => b[0]-a[0]||b[1]-a[1]||b[2]-a[2]);
     else if (sortBy === "date-asc")  filtered.sort((a,b) => a[0]-b[0]||a[1]-b[1]||a[2]-b[2]);
     else if (sortBy === "temp-desc") filtered.sort((a,b) => b[3]-a[3]);
@@ -386,14 +304,13 @@
 
   // ── Render ────────────────────────────────────────────────────────────────
   function renderResults(location, type, condition, threshold, monthFilter) {
-    const area = document.getElementById("results-area");
+    const area  = document.getElementById("results-area");
     const total = allResults.length;
 
     if (total === 0) {
       const condText = condition==="gte"?"≥":condition==="lte"?"≤":"≈";
       area.innerHTML = `
-        <div class="empty">
-          <div class="empty-icon">🌡️</div>
+        <div class="empty"><div class="empty-icon">🌡️</div>
           <h3>No records found</h3>
           <p>No days where the ${type==="max"?"maximum":"minimum"} temperature was
           ${condText} ${threshold}°C at ${location}
@@ -402,34 +319,34 @@
       return;
     }
 
-    // Stats
     const temps   = allResults.map(r => r[3]);
     const maxTemp = Math.max(...temps);
     const minTemp = Math.min(...temps);
     const avgTemp = (temps.reduce((a,b)=>a+b,0)/temps.length).toFixed(1);
-
-    // Most recent
-    const sorted_asc = [...allResults].sort((a,b)=>b[0]-a[0]||b[1]-a[1]||b[2]-a[2]);
-    const latest = sorted_asc[0];
+    const sorted_desc = [...allResults].sort((a,b)=>b[0]-a[0]||b[1]-a[1]||b[2]-a[2]);
+    const latest = sorted_desc[0];
     const latestStr = `${latest[2]} ${MONTH_NAMES[latest[1]]} ${latest[0]}`;
-
-    // Year with most occurrences
     const yearCounts = {};
-    allResults.forEach(([y]) => yearCounts[y] = (yearCounts[y]||0)+1);
+    allResults.forEach(([y]) => yearCounts[y]=(yearCounts[y]||0)+1);
     const topYear = Object.entries(yearCounts).sort((a,b)=>b[1]-a[1])[0];
-
-    // Condition label
     const condText = condition==="gte"?`≥ ${threshold}°C`:condition==="lte"?`≤ ${threshold}°C`:`≈ ${threshold}°C`;
     const typeLabel = type==="max"?"Max":"Min";
-    const monthLabel = monthFilter ? MONTH_FULL[monthFilter] : "any month";
+
+    // Count old station records in results
+    const stInfo = STATION_INFO[location];
+    const oldCount = stInfo ? allResults.filter(r => r[4] === 1).length : 0;
+    const oldNote = (stInfo && oldCount > 0)
+      ? `<span style="font-size:0.78rem;color:var(--muted);margin-left:0.5rem;">
+           (${oldCount} from <span class="station-badge-old">${stInfo.old}</span>)
+         </span>`
+      : "";
 
     area.innerHTML = `
       <div class="results-header">
         <span class="results-title">${location} — ${typeLabel} ${condText}
           ${monthFilter?`in ${MONTH_FULL[monthFilter]}`:""}</span>
-        <span class="results-count">${total.toLocaleString()} day${total!==1?"s":""} found</span>
+        <span class="results-count">${total.toLocaleString()} day${total!==1?"s":""} found${oldNote}</span>
       </div>
-
       <div class="stats-bar">
         <div class="stat-card">
           <div class="stat-label">Total days</div>
@@ -457,26 +374,37 @@
           <div class="stat-sub">${topYear[1]} day${topYear[1]!==1?"s":""}</div>
         </div>
       </div>
-
-      <div class="results-table-wrap">
-        ${renderTable()}
-      </div>
+      <div class="results-table-wrap">${renderTable(location)}</div>
       ${renderPagination()}
     `;
   }
 
-  function renderTable() {
-    const start = (currentPage-1)*PAGE_SIZE;
-    const page  = allResults.slice(start, start+PAGE_SIZE);
-    const isWarm = document.getElementById("sel-condition").value !== "lte";
+  function renderTable(location) {
+    const start   = (currentPage-1)*PAGE_SIZE;
+    const page    = allResults.slice(start, start+PAGE_SIZE);
+    const stInfo  = STATION_INFO[location];
+    const hasStation = stInfo && allResults.some(r => r.length > 4);
 
-    const rows = page.map(([y,m,d,t]) => {
+    const rows = page.map(([y,m,d,t,oldFlag]) => {
       const season = SEASONS[m];
       const tempClass = t >= 35 ? "warm" : t <= 10 ? "cool" : "";
-      return `<tr>
+      const isOld = oldFlag === 1;
+
+      // Station badge
+      let stationBadge = "";
+      if (stInfo) {
+        if (isOld) {
+          stationBadge = `<span class="station-badge-old">${stInfo.old}</span>`;
+        } else {
+          stationBadge = `<span class="station-badge-current">${stInfo.current}</span>`;
+        }
+      }
+
+      return `<tr class="${isOld?'row-old-station':''}">
         <td class="td-date">${d} ${MONTH_NAMES[m]} ${y}</td>
         <td><span class="td-season season-${season}">${SEASON_LABEL[season]}</span></td>
         <td class="td-temp ${tempClass}">${t}°C</td>
+        ${stInfo ? `<td>${stationBadge}</td>` : ""}
         <td class="td-ago">${yearsAgo(y)}</td>
       </tr>`;
     }).join("");
@@ -486,6 +414,7 @@
         <th>Date</th>
         <th>Season</th>
         <th>Temperature</th>
+        ${stInfo ? "<th>Station</th>" : ""}
         <th>How long ago</th>
       </tr></thead>
       <tbody>${rows}</tbody>
@@ -496,13 +425,11 @@
     const total = allResults.length;
     const pages = Math.ceil(total/PAGE_SIZE);
     if (pages <= 1) return "";
-
     let btns = "";
     const range = 2;
     for (let i=1; i<=pages; i++) {
-      if (i===1 || i===pages || Math.abs(i-currentPage)<=range) {
-        btns += `<button class="page-btn ${i===currentPage?"active":""}"
-                   onclick="goPage(${i})">${i}</button>`;
+      if (i===1||i===pages||Math.abs(i-currentPage)<=range) {
+        btns += `<button class="page-btn ${i===currentPage?"active":""}" onclick="goPage(${i})">${i}</button>`;
       } else if (Math.abs(i-currentPage)===range+1) {
         btns += `<span class="page-info">…</span>`;
       }
@@ -521,10 +448,10 @@
     const pages = Math.ceil(allResults.length/PAGE_SIZE);
     if (p<1||p>pages) return;
     currentPage = p;
-    const location  = document.getElementById("sel-location").value;
-    const type      = document.getElementById("sel-type").value;
-    const condition = document.getElementById("sel-condition").value;
-    const threshold = parseFloat(document.getElementById("inp-threshold").value);
+    const location    = document.getElementById("sel-location").value;
+    const type        = document.getElementById("sel-type").value;
+    const condition   = document.getElementById("sel-condition").value;
+    const threshold   = parseFloat(document.getElementById("inp-threshold").value);
     const monthFilter = parseInt(document.getElementById("sel-month").value);
     renderResults(location, type, condition, threshold, monthFilter);
     window.scrollTo({top:0, behavior:"smooth"});
@@ -537,12 +464,10 @@
     return `${diff} years ago`;
   }
 
-  // Run a default search on page load once data is ready
+  // Init
   window.addEventListener("load", () => {
-    // Pre-warm the data fetch silently
-    loadData().then(ok => {
-      if (ok) runSearch();
-    });
+    updateStationNote();
+    loadData().then(ok => { if (ok) runSearch(); });
   });
 </script>
 </body>
