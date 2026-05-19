@@ -432,6 +432,7 @@
         <div class="stat-card"><div class="stat-label">Most active year</div><div class="stat-value">${topY[0]}</div><div class="stat-sub">${topY[1]} day${topY[1]!==1?"s":""}</div></div>
       </div>
       <div class="results-table-wrap">${renderTable(location,hasDemand)}</div>
+      ${hasDemand ? `<p style="font-size:0.78rem;color:var(--muted);margin-top:0.75rem;padding-left:0.25rem;">— &nbsp;Demand data covers the last 3 years only. Older records show — where no demand data is available.</p>` : ""}
       ${renderPagination()}`;
   }
 
