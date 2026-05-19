@@ -424,6 +424,7 @@
         <span class="results-title">${location} — ${type==="max"?"Max":"Min"} ${ct}${monthFilter?` in ${MONTH_FULL[monthFilter]}`:""}</span>
         <span class="results-count">${total.toLocaleString()} day${total!==1?"s":""} found${oldNote}</span>
       </div>
+      ${hasDemand ? `<p style="font-size:0.78rem;color:var(--muted);margin-bottom:1rem;padding:0.6rem 0.85rem;background:var(--surface);border:1px solid var(--border);border-radius:7px;display:inline-block;">— &nbsp;Demand data covers the last 3 years only. Older records show — where no demand data is available.</p>` : ""}
       <div class="stats-bar">
         <div class="stat-card"><div class="stat-label">Total days</div><div class="stat-value">${total.toLocaleString()}</div><div class="stat-sub">matching records</div></div>
         <div class="stat-card"><div class="stat-label">Most recent</div><div class="stat-value" style="font-size:1rem">${latestStr}</div><div class="stat-sub">${yearsAgo(latest[0])}</div></div>
@@ -432,7 +433,6 @@
         <div class="stat-card"><div class="stat-label">Most active year</div><div class="stat-value">${topY[0]}</div><div class="stat-sub">${topY[1]} day${topY[1]!==1?"s":""}</div></div>
       </div>
       <div class="results-table-wrap">${renderTable(location,hasDemand)}</div>
-      ${hasDemand ? `<p style="font-size:0.78rem;color:var(--muted);margin-top:0.75rem;padding-left:0.25rem;">— &nbsp;Demand data covers the last 3 years only. Older records show — where no demand data is available.</p>` : ""}
       ${renderPagination()}`;
   }
 
