@@ -19,34 +19,45 @@
     .header-logo{width:36px;height:36px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;}
     .header-logo svg{width:20px;height:20px;fill:white;}
     .header-title{font-family:'DM Serif Display',serif;font-size:1.15rem;color:white;}
-    .header-nav a{color:var(--sky);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.15s;}
+    .header-nav a{color:var(--sky);text-decoration:none;font-size:0.85rem;font-weight:500;}
     .header-nav a:hover{color:white;}
 
     .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:3rem 2.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
     .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 40%,rgba(232,98,42,0.1) 0%,transparent 60%);pointer-events:none;}
     .hero-eyebrow{font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;}
     .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:white;margin-bottom:0.75rem;}
-    .hero-sub{font-size:0.95rem;color:var(--sky);font-weight:300;max-width:520px;margin:0 auto;line-height:1.7;}
+    .hero-sub{font-size:0.95rem;color:var(--sky);font-weight:300;max-width:540px;margin:0 auto;line-height:1.7;}
 
-    main{max-width:1000px;margin:0 auto;padding:2.5rem 1.5rem 4rem;}
+    main{max-width:1100px;margin:0 auto;padding:2.5rem 1.5rem 4rem;}
+
+    .mode-tabs{display:flex;margin-bottom:2rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;max-width:380px;}
+    .mode-tab{flex:1;padding:0.75rem 1rem;font-size:0.88rem;font-weight:600;color:var(--muted);cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif;transition:all 0.15s;text-align:center;}
+    .mode-tab.active{background:var(--navy);color:white;}
+    .mode-tab:hover:not(.active){background:var(--sky);color:var(--navy);}
 
     .search-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem 2rem 1.75rem;box-shadow:0 4px 20px rgba(30,58,95,0.08);margin-bottom:2rem;}
     .search-panel h2{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border);}
     .controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:1.25rem;}
     .control-group{display:flex;flex-direction:column;gap:0.35rem;}
     label{font-size:0.78rem;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:0.06em;}
-    select,input[type="number"]{padding:0.6rem 0.85rem;border:1px solid var(--border);border-radius:7px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--text);background:var(--bg);appearance:none;-webkit-appearance:none;transition:border-color 0.15s,box-shadow 0.15s;}
+    select,input[type="number"],input[type="date"]{padding:0.6rem 0.85rem;border:1px solid var(--border);border-radius:7px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--text);background:var(--bg);appearance:none;-webkit-appearance:none;transition:border-color 0.15s;}
     select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235a7080' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0.75rem center;padding-right:2rem;cursor:pointer;}
-    select:focus,input[type="number"]:focus{outline:none;border-color:var(--navy-mid);box-shadow:0 0 0 3px rgba(44,82,130,0.12);}
-    .btn-search{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--navy);color:white;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;padding:0.65rem 1.75rem;border-radius:7px;transition:background 0.15s;align-self:flex-end;width:100%;}
+    input[type="date"]{appearance:auto;-webkit-appearance:auto;}
+    select:focus,input:focus{outline:none;border-color:var(--navy-mid);box-shadow:0 0 0 3px rgba(44,82,130,0.12);}
+    .btn-search{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--navy);color:white;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;padding:0.65rem 1.75rem;border-radius:7px;transition:background 0.15s;width:100%;}
     .btn-search:hover{background:var(--navy-mid);}
     .btn-search svg{width:16px;height:16px;fill:white;}
 
-    /* Station note */
     .station-note{margin-top:1.25rem;padding:0.85rem 1rem;background:#f0f6ff;border:1px solid #c5d8f0;border-radius:7px;font-size:0.8rem;color:var(--navy);line-height:1.6;}
-    .station-note strong{font-weight:600;}
     .station-badge-old{display:inline-block;padding:0.1rem 0.5rem;border-radius:999px;font-size:0.68rem;font-weight:600;background:#fff3cd;color:#7a5000;border:1px solid #e8c840;margin-left:4px;vertical-align:middle;}
     .station-badge-current{display:inline-block;padding:0.1rem 0.5rem;border-radius:999px;font-size:0.68rem;font-weight:600;background:#e8f5e9;color:#2a6e3f;border:1px solid #a8d5b5;margin-left:4px;vertical-align:middle;}
+
+    .demand-badge{display:inline-block;padding:0.15rem 0.6rem;border-radius:999px;font-size:0.72rem;font-weight:600;white-space:nowrap;}
+    .demand-extreme{background:#fde8e8;color:#8b1a1a;}
+    .demand-high{background:#fde8d8;color:#7a3000;}
+    .demand-elevated{background:#fef9e2;color:#7a5500;}
+    .demand-normal{background:#f0f4f8;color:#5a7080;}
+    .demand-na{background:#f0f4f8;color:#9ab0c0;font-style:italic;}
 
     .loading{text-align:center;padding:3rem;color:var(--muted);font-size:0.9rem;}
     .spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--navy);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 1rem;}
@@ -65,8 +76,7 @@
     .results-table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
     table{width:100%;border-collapse:collapse;font-size:0.88rem;}
     thead{background:var(--navy);}
-    thead th{color:white;font-weight:600;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;padding:0.85rem 1rem;text-align:left;cursor:pointer;user-select:none;white-space:nowrap;}
-    thead th:hover{background:var(--navy-mid);}
+    thead th{color:white;font-weight:600;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;padding:0.85rem 1rem;text-align:left;white-space:nowrap;}
     tbody tr{border-bottom:1px solid var(--border);transition:background 0.1s;}
     tbody tr:last-child{border-bottom:none;}
     tbody tr:hover{background:#f7fafd;}
@@ -83,6 +93,16 @@
     .season-autumn{background:#fef3e2;color:#b35a00;}
     .season-winter{background:#dceeff;color:#1a4fa0;}
     .season-spring{background:#dff5e8;color:#1a7a4a;}
+
+    .date-lookup-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+    .date-lookup-card h3{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border);}
+    .lookup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;}
+    .lookup-item{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;}
+    .lookup-item-label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:0.4rem;}
+    .lookup-item-value{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--navy);}
+    .lookup-item-value.warm{color:var(--warm);}
+    .lookup-item-value.cool{color:var(--cool);}
+    .lookup-item-sub{font-size:0.78rem;color:var(--muted);margin-top:0.2rem;}
 
     .pagination{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;}
     .page-btn{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.75rem;font-size:0.82rem;cursor:pointer;color:var(--navy);font-family:'DM Sans',sans-serif;transition:all 0.15s;}
@@ -109,19 +129,24 @@
     </div>
     <span class="header-title">Temperature Record Search</span>
   </div>
-  <nav class="header-nav">
-    <a href="index.html">← Back to Anomaly Tables</a>
-  </nav>
+  <nav class="header-nav"><a href="index.html">← Back to Anomaly Tables</a></nav>
 </header>
 
 <section class="hero">
   <p class="hero-eyebrow">Historical Observations</p>
   <h1>Station Temperature Search</h1>
-  <p class="hero-sub">Search Bureau of Meteorology daily max and min temperature records across all stations. Find the last time a threshold was exceeded, longest streaks, and more.</p>
+  <p class="hero-sub">Search BOM daily temperature records and see NEM demand context. Find threshold exceedances, or look up exactly what happened on a specific date.</p>
 </section>
 
 <main>
-  <div class="search-panel">
+
+  <div class="mode-tabs">
+    <button class="mode-tab active" id="tab-search" onclick="setMode('search')">🔍 Threshold Search</button>
+    <button class="mode-tab" id="tab-date"   onclick="setMode('date')">📅 Date Lookup</button>
+  </div>
+
+  <!-- Threshold search panel -->
+  <div id="panel-search" class="search-panel">
     <h2>Search Parameters</h2>
     <div class="controls">
       <div class="control-group">
@@ -178,9 +203,31 @@
       <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
       Search Records
     </button>
-
-    <!-- Station note — shown for Adelaide and Melbourne -->
     <div class="station-note" id="station-note" style="display:none;"></div>
+  </div>
+
+  <!-- Date lookup panel -->
+  <div id="panel-date" class="search-panel" style="display:none;">
+    <h2>Date Lookup</h2>
+    <div class="controls" style="max-width:440px;">
+      <div class="control-group">
+        <label>Location</label>
+        <select id="date-location">
+          <option value="Adelaide">Adelaide</option>
+          <option value="Archerfield">Archerfield</option>
+          <option value="Bankstown" selected>Bankstown</option>
+          <option value="Melbourne">Melbourne</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label>Date</label>
+        <input type="date" id="date-input"/>
+      </div>
+    </div>
+    <button class="btn-search" style="max-width:280px;margin-top:0.5rem;" onclick="runDateLookup()">
+      <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+      Look Up Date
+    </button>
   </div>
 
   <div id="results-area"></div>
@@ -188,7 +235,8 @@
 
 <footer>
   <strong>MetraWeather Australia</strong> &nbsp;·&nbsp; Historical Temperature Search
-  &nbsp;·&nbsp; Data: <a href="https://www.bom.gov.au">Bureau of Meteorology</a>
+  &nbsp;·&nbsp; Obs: <a href="https://www.bom.gov.au">Bureau of Meteorology</a>
+  &nbsp;·&nbsp; Demand: <a href="https://www.aemo.com.au">AEMO</a>
   &nbsp;·&nbsp; <a href="index.html">← Anomaly Tables</a>
 </footer>
 
@@ -198,276 +246,261 @@
   const SEASONS = {1:"summer",2:"summer",3:"autumn",4:"autumn",5:"autumn",6:"winter",7:"winter",8:"winter",9:"spring",10:"spring",11:"spring",12:"summer"};
   const SEASON_LABEL = {summer:"Summer",autumn:"Autumn",winter:"Winter",spring:"Spring"};
 
-  // Station change info per location
+  const LOCATION_REGION = {Adelaide:"SA1",Melbourne:"VIC1",Bankstown:"NSW1",Archerfield:"QLD1"};
+
   const STATION_INFO = {
-    Adelaide: {
-      old:     "Kent Town (023090)",
-      current: "West Terrace (023000)",
-      cutYear: 2017,
-      note:    "Adelaide observations before 2017 are from <strong>Kent Town station</strong>. From 2017 onwards the primary station is <strong>West Terrace</strong>. Small temperature differences may exist between the two sites.",
-    },
-    Melbourne: {
-      old:     "Regional Office (086071)",
-      current: "Olympic Park (086338)",
-      cutYear: 2013,
-      note:    "Melbourne observations before 2013 are from <strong>Regional Office (CBD)</strong>. From 2013 onwards the primary station is <strong>Olympic Park</strong>. Small temperature differences may exist between the two sites.",
-    },
+    Adelaide:{old:"Kent Town (023090)",current:"West Terrace (023000)",cutYear:2017,
+      note:"Adelaide observations before 2017 are from <strong>Kent Town station</strong>. From 2017 onwards: <strong>West Terrace</strong>."},
+    Melbourne:{old:"Regional Office (086071)",current:"Olympic Park (086338)",cutYear:2013,
+      note:"Melbourne observations before 2013 are from <strong>Regional Office (CBD)</strong>. From 2013 onwards: <strong>Olympic Park</strong>."},
   };
 
-  let obsData    = null;
-  let allResults = [];
-  let currentPage = 1;
-  const PAGE_SIZE = 25;
+  let obsData=null, demandData=null, allResults=[], currentPage=1, currentMode='search';
+  const PAGE_SIZE=25;
 
-  // ── Station note ─────────────────────────────────────────────────────────
-  function updateStationNote() {
-    const loc = document.getElementById("sel-location").value;
-    const el  = document.getElementById("station-note");
-    if (STATION_INFO[loc]) {
-      const info = STATION_INFO[loc];
-      el.innerHTML = `ℹ️ &nbsp;${info.note}<br>
-        <span style="margin-top:6px;display:inline-block;">
-          Records before ${info.cutYear}: <span class="station-badge-old">${info.old}</span>
-          &nbsp;&nbsp;Records from ${info.cutYear}+: <span class="station-badge-current">${info.current}</span>
-        </span>`;
-      el.style.display = "block";
-    } else {
-      el.style.display = "none";
-    }
+  // ── Mode ──────────────────────────────────────────────────────────────────
+  function setMode(mode){
+    currentMode=mode;
+    document.getElementById('panel-search').style.display=mode==='search'?'block':'none';
+    document.getElementById('panel-date').style.display=mode==='date'?'block':'none';
+    document.getElementById('tab-search').classList.toggle('active',mode==='search');
+    document.getElementById('tab-date').classList.toggle('active',mode==='date');
+    document.getElementById('results-area').innerHTML='';
+    if(mode==='date'&&!document.getElementById('date-input').value)
+      document.getElementById('date-input').value=new Date().toISOString().slice(0,10);
   }
 
-  // ── Load data ─────────────────────────────────────────────────────────────
-  async function loadData() {
-    if (obsData) return true;
-    showLoading("Loading observation data…");
-    try {
-      const resp = await fetch("observations.json");
-      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-      obsData = await resp.json();
-      return true;
-    } catch(e) {
-      document.getElementById("results-area").innerHTML = `
-        <div class="empty"><div class="empty-icon">⚠️</div>
-          <h3>Could not load observation data</h3>
-          <p>Make sure <strong>observations.json</strong> has been committed to the repository.</p>
-        </div>`;
-      return false;
-    }
+  function updateStationNote(){
+    const loc=document.getElementById("sel-location").value;
+    const el=document.getElementById("station-note");
+    if(STATION_INFO[loc]){
+      const i=STATION_INFO[loc];
+      el.innerHTML=`ℹ️ &nbsp;${i.note}<br><span style="margin-top:6px;display:inline-block;">Before ${i.cutYear}: <span class="station-badge-old">${i.old}</span> &nbsp; From ${i.cutYear}+: <span class="station-badge-current">${i.current}</span></span>`;
+      el.style.display='block';
+    }else el.style.display='none';
   }
 
-  function showLoading(msg) {
-    document.getElementById("results-area").innerHTML = `
-      <div class="loading"><div class="spinner"></div>${msg}</div>`;
+  // ── Data loading ──────────────────────────────────────────────────────────
+  async function loadObs(){
+    if(obsData)return true;
+    try{const r=await fetch("observations.json");if(!r.ok)throw new Error();obsData=await r.json();return true;}
+    catch(e){showError("Could not load observations.json.");return false;}
   }
+  async function loadDemand(){
+    if(demandData)return;
+    try{const r=await fetch("demand.json");if(r.ok)demandData=await r.json();}
+    catch(e){console.warn("demand.json not available");}
+  }
+  function showError(msg){document.getElementById("results-area").innerHTML=`<div class="empty"><div class="empty-icon">⚠️</div><h3>Error</h3><p>${msg}</p></div>`;}
+  function showLoading(msg){document.getElementById("results-area").innerHTML=`<div class="loading"><div class="spinner"></div>${msg}</div>`;}
 
-  // ── Search ────────────────────────────────────────────────────────────────
-  async function runSearch() {
-    if (!await loadData()) return;
+  // ── Demand helpers ────────────────────────────────────────────────────────
+  function getDemand(location,dateStr){
+    if(!demandData)return null;
+    return demandData[LOCATION_REGION[location]]?.days?.[dateStr]||null;
+  }
+  function demandBadge(location,dateStr){
+    const d=getDemand(location,dateStr);
+    if(!d)return`<span class="demand-badge demand-na">—</span>`;
+    const p=d.pct;
+    let cls,lbl;
+    if(p>=99){cls="demand-extreme";lbl="Top 1%";}
+    else if(p>=95){cls="demand-extreme";lbl="Top 5%";}
+    else if(p>=90){cls="demand-high";lbl="Top 10%";}
+    else if(p>=75){cls="demand-elevated";lbl="Top 25%";}
+    else if(p>=50){cls="demand-normal";lbl="Above median";}
+    else{cls="demand-normal";lbl="Below median";}
+    return`<span class="demand-badge ${cls}" title="${d.peak.toLocaleString()} MW">${d.peak.toLocaleString()} MW · ${lbl}</span>`;
+  }
+  function regionLabel(loc){return{Adelaide:"SA demand",Melbourne:"VIC demand",Bankstown:"NSW demand",Archerfield:"QLD demand"}[loc]||"Demand";}
 
-    const location    = document.getElementById("sel-location").value;
-    const type        = document.getElementById("sel-type").value;
-    const condition   = document.getElementById("sel-condition").value;
-    const threshold   = parseFloat(document.getElementById("inp-threshold").value);
-    const monthFilter = parseInt(document.getElementById("sel-month").value);
-    const sortBy      = document.getElementById("sel-sort").value;
-
-    if (isNaN(threshold)) { alert("Please enter a valid temperature."); return; }
-
-    const records = obsData[location]?.[type];
-    if (!records) { alert("No data for this selection."); return; }
-
-    showLoading(`Searching ${records.length.toLocaleString()} records…`);
-    await new Promise(r => setTimeout(r, 10));
-
-    // Records are [year, month, day, temp] or [year, month, day, temp, old_flag]
-    let filtered = records.filter(([y, m, d, t]) => {
-      if (monthFilter !== 0 && m !== monthFilter) return false;
-      if (condition === "gte") return t >= threshold;
-      if (condition === "lte") return t <= threshold;
-      if (condition === "eq")  return Math.abs(t - threshold) <= 1.0;
+  // ── Threshold search ──────────────────────────────────────────────────────
+  async function runSearch(){
+    if(!await loadObs())return;
+    await loadDemand();
+    const loc=document.getElementById("sel-location").value;
+    const type=document.getElementById("sel-type").value;
+    const cond=document.getElementById("sel-condition").value;
+    const thresh=parseFloat(document.getElementById("inp-threshold").value);
+    const mf=parseInt(document.getElementById("sel-month").value);
+    const sort=document.getElementById("sel-sort").value;
+    if(isNaN(thresh)){alert("Please enter a valid temperature.");return;}
+    const recs=obsData[loc]?.[type];
+    if(!recs){alert("No data for this selection.");return;}
+    showLoading(`Searching ${recs.length.toLocaleString()} records…`);
+    await new Promise(r=>setTimeout(r,10));
+    let filtered=recs.filter(([y,m,d,t])=>{
+      if(mf!==0&&m!==mf)return false;
+      if(cond==="gte")return t>=thresh;
+      if(cond==="lte")return t<=thresh;
+      if(cond==="eq")return Math.abs(t-thresh)<=1.0;
       return false;
     });
-
-    if (condition === "eq") {
-      filtered.sort((a,b) => Math.abs(a[3]-threshold) - Math.abs(b[3]-threshold));
-    }
-
-    if (sortBy === "date-desc") filtered.sort((a,b) => b[0]-a[0]||b[1]-a[1]||b[2]-a[2]);
-    else if (sortBy === "date-asc")  filtered.sort((a,b) => a[0]-b[0]||a[1]-b[1]||a[2]-b[2]);
-    else if (sortBy === "temp-desc") filtered.sort((a,b) => b[3]-a[3]);
-    else if (sortBy === "temp-asc")  filtered.sort((a,b) => a[3]-b[3]);
-
-    allResults  = filtered;
-    currentPage = 1;
-    renderResults(location, type, condition, threshold, monthFilter);
+    if(cond==="eq")filtered.sort((a,b)=>Math.abs(a[3]-thresh)-Math.abs(b[3]-thresh));
+    if(sort==="date-desc")filtered.sort((a,b)=>b[0]-a[0]||b[1]-a[1]||b[2]-a[2]);
+    else if(sort==="date-asc")filtered.sort((a,b)=>a[0]-b[0]||a[1]-b[1]||a[2]-b[2]);
+    else if(sort==="temp-desc")filtered.sort((a,b)=>b[3]-a[3]);
+    else if(sort==="temp-asc")filtered.sort((a,b)=>a[3]-b[3]);
+    allResults=filtered;currentPage=1;
+    renderResults(loc,type,cond,thresh,mf);
   }
 
-  // ── Render ────────────────────────────────────────────────────────────────
-  function renderResults(location, type, condition, threshold, monthFilter) {
-    const area  = document.getElementById("results-area");
-    const total = allResults.length;
-
-    if (total === 0) {
-      const condText = condition==="gte"?"≥":condition==="lte"?"≤":"≈";
-      area.innerHTML = `
-        <div class="empty"><div class="empty-icon">🌡️</div>
-          <h3>No records found</h3>
-          <p>No days where the ${type==="max"?"maximum":"minimum"} temperature was
-          ${condText} ${threshold}°C at ${location}
-          ${monthFilter?`in ${MONTH_FULL[monthFilter]}`:""}.</p>
-        </div>`;
+  // ── Date lookup ───────────────────────────────────────────────────────────
+  async function runDateLookup(){
+    if(!await loadObs())return;
+    await loadDemand();
+    const loc=document.getElementById("date-location").value;
+    const dv=document.getElementById("date-input").value;
+    if(!dv){alert("Please select a date.");return;}
+    showLoading("Looking up date…");
+    await new Promise(r=>setTimeout(r,10));
+    const[y,m,d]=dv.split("-").map(Number);
+    const area=document.getElementById("results-area");
+    const maxRec=obsData[loc]?.max?.find(r=>r[0]===y&&r[1]===m&&r[2]===d);
+    const minRec=obsData[loc]?.min?.find(r=>r[0]===y&&r[1]===m&&r[2]===d);
+    if(!maxRec&&!minRec){
+      area.innerHTML=`<div class="empty"><div class="empty-icon">🌡️</div><h3>No data found</h3><p>No observations for ${d} ${MONTH_NAMES[m]} ${y} at ${loc}.</p></div>`;
       return;
     }
+    const tmax=maxRec?maxRec[3]:null;
+    const tmin=minRec?minRec[3]:null;
+    const stInfo=STATION_INFO[loc];
+    const isOld=stInfo&&y<stInfo.cutYear;
+    const stBadge=isOld?`<span class="station-badge-old">${stInfo.old}</span>`:(stInfo?`<span class="station-badge-current">${stInfo.current}</span>`:"");
+    const demand=getDemand(loc,dv);
+    let tmaxCtx="",tminCtx="";
+    if(tmax!==null){
+      const sm=(obsData[loc]?.max||[]).filter(r=>r[1]===m).map(r=>r[3]);
+      if(sm.length)tmaxCtx=`${MONTH_NAMES[m]} ${((sm.filter(v=>v<=tmax).length/sm.length)*100).toFixed(0)}th percentile`;
+    }
+    if(tmin!==null){
+      const sm=(obsData[loc]?.min||[]).filter(r=>r[1]===m).map(r=>r[3]);
+      if(sm.length)tminCtx=`${MONTH_NAMES[m]} ${((sm.filter(v=>v<=tmin).length/sm.length)*100).toFixed(0)}th percentile`;
+    }
+    area.innerHTML=`
+      <div class="date-lookup-card">
+        <h3>${loc} — ${d} ${MONTH_FULL[m]} ${y} <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:400;color:var(--muted);margin-left:0.5rem;">${SEASON_LABEL[SEASONS[m]]} ${stBadge}</span></h3>
+        <div class="lookup-grid">
+          ${tmax!==null?`<div class="lookup-item"><div class="lookup-item-label">Daily Maximum</div><div class="lookup-item-value ${tmax>=35?"warm":""}">${tmax}°C</div><div class="lookup-item-sub">${tmaxCtx}</div></div>`:""}
+          ${tmin!==null?`<div class="lookup-item"><div class="lookup-item-label">Daily Minimum</div><div class="lookup-item-value ${tmin<=5?"cool":""}">${tmin}°C</div><div class="lookup-item-sub">${tminCtx}</div></div>`:""}
+          ${demand?`
+          <div class="lookup-item">
+            <div class="lookup-item-label">${regionLabel(loc)}</div>
+            <div class="lookup-item-value" style="font-size:1.2rem;">${demand.peak.toLocaleString()} MW</div>
+            <div class="lookup-item-sub">${demandBadge(loc,dv)}</div>
+          </div>`:`
+          <div class="lookup-item">
+            <div class="lookup-item-label">${regionLabel(loc)}</div>
+            <div class="lookup-item-value demand-na" style="font-size:1rem;font-family:'DM Sans',sans-serif;">Not available</div>
+            <div class="lookup-item-sub">Demand data covers last 3 years only</div>
+          </div>`}
+          <div class="lookup-item"><div class="lookup-item-label">How long ago</div><div class="lookup-item-value" style="font-size:1.1rem;font-family:'DM Sans',sans-serif;">${yearsAgo(y)}</div><div class="lookup-item-sub">${SEASON_LABEL[SEASONS[m]]}</div></div>
+        </div>
+      </div>`;
+  }
 
-    const temps   = allResults.map(r => r[3]);
-    const maxTemp = Math.max(...temps);
-    const minTemp = Math.min(...temps);
-    const avgTemp = (temps.reduce((a,b)=>a+b,0)/temps.length).toFixed(1);
-    const sorted_desc = [...allResults].sort((a,b)=>b[0]-a[0]||b[1]-a[1]||b[2]-a[2]);
-    const latest = sorted_desc[0];
-    const latestStr = `${latest[2]} ${MONTH_NAMES[latest[1]]} ${latest[0]}`;
-    const yearCounts = {};
-    allResults.forEach(([y]) => yearCounts[y]=(yearCounts[y]||0)+1);
-    const topYear = Object.entries(yearCounts).sort((a,b)=>b[1]-a[1])[0];
-    const condText = condition==="gte"?`≥ ${threshold}°C`:condition==="lte"?`≤ ${threshold}°C`:`≈ ${threshold}°C`;
-    const typeLabel = type==="max"?"Max":"Min";
-
-    // Count old station records in results
-    const stInfo = STATION_INFO[location];
-    const oldCount = stInfo ? allResults.filter(r => r[4] === 1).length : 0;
-    const oldNote = (stInfo && oldCount > 0)
-      ? `<span style="font-size:0.78rem;color:var(--muted);margin-left:0.5rem;">
-           (${oldCount} from <span class="station-badge-old">${stInfo.old}</span>)
-         </span>`
-      : "";
-
-    area.innerHTML = `
+  // ── Render search results ─────────────────────────────────────────────────
+  function renderResults(location,type,condition,threshold,monthFilter){
+    const area=document.getElementById("results-area");
+    const total=allResults.length;
+    const hasDemand=!!demandData;
+    if(total===0){
+      const ct=condition==="gte"?"≥":condition==="lte"?"≤":"≈";
+      area.innerHTML=`<div class="empty"><div class="empty-icon">🌡️</div><h3>No records found</h3><p>No days where the ${type==="max"?"maximum":"minimum"} temperature was ${ct} ${threshold}°C at ${location}${monthFilter?` in ${MONTH_FULL[monthFilter]}`:""}.</p></div>`;
+      return;
+    }
+    const temps=allResults.map(r=>r[3]);
+    const maxT=Math.max(...temps),avgT=(temps.reduce((a,b)=>a+b,0)/temps.length).toFixed(1);
+    const latest=[...allResults].sort((a,b)=>b[0]-a[0]||b[1]-a[1]||b[2]-a[2])[0];
+    const latestStr=`${latest[2]} ${MONTH_NAMES[latest[1]]} ${latest[0]}`;
+    const yc={};allResults.forEach(([y])=>yc[y]=(yc[y]||0)+1);
+    const topY=Object.entries(yc).sort((a,b)=>b[1]-a[1])[0];
+    const ct=condition==="gte"?`≥ ${threshold}°C`:condition==="lte"?`≤ ${threshold}°C`:`≈ ${threshold}°C`;
+    const stInfo=STATION_INFO[location];
+    const oldCnt=stInfo?allResults.filter(r=>r[4]===1).length:0;
+    const oldNote=(stInfo&&oldCnt>0)?`<span style="font-size:0.78rem;color:var(--muted);margin-left:0.5rem;">(${oldCnt} from <span class="station-badge-old">${stInfo.old}</span>)</span>`:"";
+    area.innerHTML=`
       <div class="results-header">
-        <span class="results-title">${location} — ${typeLabel} ${condText}
-          ${monthFilter?`in ${MONTH_FULL[monthFilter]}`:""}</span>
+        <span class="results-title">${location} — ${type==="max"?"Max":"Min"} ${ct}${monthFilter?` in ${MONTH_FULL[monthFilter]}`:""}</span>
         <span class="results-count">${total.toLocaleString()} day${total!==1?"s":""} found${oldNote}</span>
       </div>
       <div class="stats-bar">
-        <div class="stat-card">
-          <div class="stat-label">Total days</div>
-          <div class="stat-value">${total.toLocaleString()}</div>
-          <div class="stat-sub">matching records</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Most recent</div>
-          <div class="stat-value" style="font-size:1rem">${latestStr}</div>
-          <div class="stat-sub">${yearsAgo(latest[0])}</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Hottest recorded</div>
-          <div class="stat-value" style="color:var(--warm)">${maxTemp}°C</div>
-          <div class="stat-sub">in this selection</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Mean (matched days)</div>
-          <div class="stat-value">${avgTemp}°C</div>
-          <div class="stat-sub">avg on qualifying days</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Most active year</div>
-          <div class="stat-value">${topYear[0]}</div>
-          <div class="stat-sub">${topYear[1]} day${topYear[1]!==1?"s":""}</div>
-        </div>
+        <div class="stat-card"><div class="stat-label">Total days</div><div class="stat-value">${total.toLocaleString()}</div><div class="stat-sub">matching records</div></div>
+        <div class="stat-card"><div class="stat-label">Most recent</div><div class="stat-value" style="font-size:1rem">${latestStr}</div><div class="stat-sub">${yearsAgo(latest[0])}</div></div>
+        <div class="stat-card"><div class="stat-label">Hottest</div><div class="stat-value" style="color:var(--warm)">${maxT}°C</div><div class="stat-sub">in this selection</div></div>
+        <div class="stat-card"><div class="stat-label">Mean (matched)</div><div class="stat-value">${avgT}°C</div><div class="stat-sub">avg on qualifying days</div></div>
+        <div class="stat-card"><div class="stat-label">Most active year</div><div class="stat-value">${topY[0]}</div><div class="stat-sub">${topY[1]} day${topY[1]!==1?"s":""}</div></div>
       </div>
-      <div class="results-table-wrap">${renderTable(location)}</div>
-      ${renderPagination()}
-    `;
+      <div class="results-table-wrap">${renderTable(location,hasDemand)}</div>
+      ${renderPagination()}`;
   }
 
-  function renderTable(location) {
-    const start   = (currentPage-1)*PAGE_SIZE;
-    const page    = allResults.slice(start, start+PAGE_SIZE);
-    const stInfo  = STATION_INFO[location];
-    const hasStation = stInfo && allResults.some(r => r.length > 4);
-
-    const rows = page.map(([y,m,d,t,oldFlag]) => {
-      const season = SEASONS[m];
-      const tempClass = t >= 35 ? "warm" : t <= 10 ? "cool" : "";
-      const isOld = oldFlag === 1;
-
-      // Station badge
-      let stationBadge = "";
-      if (stInfo) {
-        if (isOld) {
-          stationBadge = `<span class="station-badge-old">${stInfo.old}</span>`;
-        } else {
-          stationBadge = `<span class="station-badge-current">${stInfo.current}</span>`;
-        }
-      }
-
-      return `<tr class="${isOld?'row-old-station':''}">
+  function renderTable(location,hasDemand){
+    const start=(currentPage-1)*PAGE_SIZE;
+    const page=allResults.slice(start,start+PAGE_SIZE);
+    const stInfo=STATION_INFO[location];
+    const rows=page.map(([y,m,d,t,oldFlag])=>{
+      const season=SEASONS[m];
+      const tc=t>=35?"warm":t<=10?"cool":"";
+      const isOld=oldFlag===1;
+      const ds=`${y}-${String(m).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+      const sb=stInfo?(isOld?`<span class="station-badge-old">${stInfo.old}</span>`:`<span class="station-badge-current">${stInfo.current}</span>`):"";
+      return`<tr class="${isOld?"row-old-station":""}">
         <td class="td-date">${d} ${MONTH_NAMES[m]} ${y}</td>
         <td><span class="td-season season-${season}">${SEASON_LABEL[season]}</span></td>
-        <td class="td-temp ${tempClass}">${t}°C</td>
-        ${stInfo ? `<td>${stationBadge}</td>` : ""}
+        <td class="td-temp ${tc}">${t}°C</td>
+        ${stInfo?`<td>${sb}</td>`:""}
+        ${hasDemand?`<td>${demandBadge(location,ds)}</td>`:""}
         <td class="td-ago">${yearsAgo(y)}</td>
       </tr>`;
     }).join("");
-
-    return `<table>
-      <thead><tr>
-        <th>Date</th>
-        <th>Season</th>
-        <th>Temperature</th>
-        ${stInfo ? "<th>Station</th>" : ""}
-        <th>How long ago</th>
-      </tr></thead>
-      <tbody>${rows}</tbody>
-    </table>`;
+    return`<table><thead><tr>
+      <th>Date</th><th>Season</th><th>Temperature</th>
+      ${stInfo?"<th>Station</th>":""}
+      ${hasDemand?`<th>${regionLabel(location)}</th>`:""}
+      <th>How long ago</th>
+    </tr></thead><tbody>${rows}</tbody></table>`;
   }
 
-  function renderPagination() {
-    const total = allResults.length;
-    const pages = Math.ceil(total/PAGE_SIZE);
-    if (pages <= 1) return "";
-    let btns = "";
-    const range = 2;
-    for (let i=1; i<=pages; i++) {
-      if (i===1||i===pages||Math.abs(i-currentPage)<=range) {
-        btns += `<button class="page-btn ${i===currentPage?"active":""}" onclick="goPage(${i})">${i}</button>`;
-      } else if (Math.abs(i-currentPage)===range+1) {
-        btns += `<span class="page-info">…</span>`;
-      }
+  function renderPagination(){
+    const total=allResults.length,pages=Math.ceil(total/PAGE_SIZE);
+    if(pages<=1)return"";
+    let btns="";
+    for(let i=1;i<=pages;i++){
+      if(i===1||i===pages||Math.abs(i-currentPage)<=2)btns+=`<button class="page-btn ${i===currentPage?"active":""}" onclick="goPage(${i})">${i}</button>`;
+      else if(Math.abs(i-currentPage)===3)btns+=`<span class="page-info">…</span>`;
     }
-    const start = (currentPage-1)*PAGE_SIZE+1;
-    const end   = Math.min(currentPage*PAGE_SIZE, total);
-    return `<div class="pagination">
+    const s=(currentPage-1)*PAGE_SIZE+1,e=Math.min(currentPage*PAGE_SIZE,total);
+    return`<div class="pagination">
       <button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?"disabled":""}>‹</button>
       ${btns}
       <button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?"disabled":""}>›</button>
-      <span class="page-info">${start}–${end} of ${total.toLocaleString()}</span>
+      <span class="page-info">${s}–${e} of ${total.toLocaleString()}</span>
     </div>`;
   }
 
-  function goPage(p) {
-    const pages = Math.ceil(allResults.length/PAGE_SIZE);
-    if (p<1||p>pages) return;
-    currentPage = p;
-    const location    = document.getElementById("sel-location").value;
-    const type        = document.getElementById("sel-type").value;
-    const condition   = document.getElementById("sel-condition").value;
-    const threshold   = parseFloat(document.getElementById("inp-threshold").value);
-    const monthFilter = parseInt(document.getElementById("sel-month").value);
-    renderResults(location, type, condition, threshold, monthFilter);
-    window.scrollTo({top:0, behavior:"smooth"});
+  function goPage(p){
+    const pages=Math.ceil(allResults.length/PAGE_SIZE);
+    if(p<1||p>pages)return;
+    currentPage=p;
+    renderResults(
+      document.getElementById("sel-location").value,
+      document.getElementById("sel-type").value,
+      document.getElementById("sel-condition").value,
+      parseFloat(document.getElementById("inp-threshold").value),
+      parseInt(document.getElementById("sel-month").value)
+    );
+    window.scrollTo({top:0,behavior:"smooth"});
   }
 
-  function yearsAgo(year) {
-    const diff = new Date().getFullYear() - year;
-    if (diff===0) return "This year";
-    if (diff===1) return "1 year ago";
-    return `${diff} years ago`;
+  function yearsAgo(year){
+    const d=new Date().getFullYear()-year;
+    if(d===0)return"This year";if(d===1)return"1 year ago";return`${d} years ago`;
   }
 
-  // Init
-  window.addEventListener("load", () => {
+  window.addEventListener("load",()=>{
     updateStationNote();
-    loadData().then(ok => { if (ok) runSearch(); });
+    loadObs().then(ok=>{if(ok){loadDemand();runSearch();}});
   });
 </script>
 </body>
